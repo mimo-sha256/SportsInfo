@@ -1,0 +1,23 @@
+{
+  "name": "sportsinfo",
+  "version": "1.0.0",
+  "description": "information about different sports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mimo-sha256/SportsInfo.git"
+  },
+  "author": "mimo-sha256",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mimo-sha256/SportsInfo/issues"
+  },
+  "homepage": "https://github.com/mimo-sha256/SportsInfo#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}

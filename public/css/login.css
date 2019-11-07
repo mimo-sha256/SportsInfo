@@ -1,0 +1,34 @@
+#loginForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#loginButton {
+    margin: 0 45%;
+    width: max-content;
+}
+
+.jumbotron {
+    text-align: center;
+    font-family: 'Rock Salt', cursive;
+    padding-top: 84px;
+    padding-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+small {
+    display: block;
+    text-align: center;
+}
+
+.signup {
+    display: none;
+}
+
+#signupButton{
+    margin-top: 15px;
+}

@@ -1,0 +1,27 @@
+img {
+    max-height: 750px;
+}
+
+.carousel {
+    max-height: 750px;
+}
+
+.display-4 {
+    text-align: center;
+}
+
+#desc{
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#teamtitle{
+    text-align: center;
+    font-size: 40px;
+}
+
+#playertitle{
+    text-align: center;
+    font-size: 40px;
+}

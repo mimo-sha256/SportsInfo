@@ -1,0 +1,12 @@
+.round {
+    border: 2px solid black;
+    border-radius: 400px 200px;
+}
+
+.card {
+    border:none;
+}
+
+.card-text {
+    text-align: center;
+}

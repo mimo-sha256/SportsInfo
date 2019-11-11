@@ -1,0 +1,40 @@
+.mainLogo {
+    /* The image used */
+    background-image: url("http://datastore04.rediff.com/h1500-w1500/thumb/65575A5D665F636F5E6C60/e88hio3p7czxsbec.D.0.Bangalore-Royal-Challengers.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainBody {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Rock Salt', cursive;
+}
+
+.card-body {
+    padding: 10px 0;
+}
+
+.card {
+    transition: all 0.6s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.display-4 {
+    text-align: center;
+}

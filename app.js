@@ -42,8 +42,16 @@ app.get("/login", function (req, res) {
     res.render("login");
 });
 
-app.get("/:sports", function (req, res) {
+app.get("/sport/:sportName", function (req, res) {
     res.render("sport");
+});
+
+app.get("/team/:teamName", function (req, res) {
+    res.render("team");
+});
+
+app.get("/player/:playerName", function (req, res) {
+    res.render("player");
 });
 
 app.listen(3000, process.env.IP, function () {

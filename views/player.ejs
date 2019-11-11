@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <title>Players</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .parallax {
+            /* The image used */
+            background-image: url("cr7.jpg");
+
+            /* Set a specific height */
+            min-height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        p {
+            font-size: 20px;
+            color: black;
+        }
+
+        .first {
+            font-style: oblique;
+        }
+
+        .heading {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .info {
+
+            float: right;
+        }
+
+        body {
+            background-color: #009600;
+        }
+
+        .span {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            color: black;
+            font-family: arial fantasy;
+            ;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        table {
+            color: black;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .new {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .container1 {
+            position: relative;
+            width: 25%;
+            height: 50%;
+            float: left;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #009600;
+        }
+
+        .container1:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <% include partials/navbar.ejs %>
+
+    <div class="parallax" style="background-image:url(&quot <%= player.bgimage %> &quot)"></div>
+    <br>
+    <div class="container">
+
+        <div class="jumbotron heading">
+            <h1>Cristiano Ronaldo</h1>
+        </div>
+        <div class="container">
+            <p class="lead first">Cristiano Ronaldo, in full Cristiano Ronaldo dos Santos Aveiro, (born February 5,
+                1985, Funchal, Madeira, Portugal), Portuguese football (soccer) forward who was one of the greatest
+                players of his generation.</p>
+            <div class="info">
+                <table class="table table-bordered new">
+                    <tbody>
+                        <tr>
+                            <th colspan="1">DESCRIPTION</th>
+                        <tr class="first">
+                            <td>
+                                <figure><img src="<%= player.image %>" width="360px" height="300px"></figure>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="some">
+                <p><%= player.description %></p>
+            </span>
+        </div>
+        <div class="end">
+            <h1 class="display-4">TEAMS PLAYED FOR:</h1>
+            <br><br>
+            <div class="container1">
+                <img src="real.png" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text">Real Madrid</div>
+                </div>
+            </div>
+            <div class="container1">
+                <img src="manuu.png" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text">Manchester United</div>
+                </div>
+            </div>
+            <div class="container1">
+                <img src="juventus.png" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text">Juventus</div>
+                </div>
+            </div>
+            <div class="container1">
+                <img src="port.png" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text">Portugal FC</div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

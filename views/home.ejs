@@ -21,102 +21,30 @@
 
     <div class="ParallaxVideo">
         <video autoplay muted id="vid">
-            <source src="<%= bgImage[0].img %>" type="video/mp4">
+            <source src="public/images/Humans Are Amazing Sports.mp4" type="video/mp4">
         </video>
     </div>
 
     <!-- Grid of players -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div id="videosList">
+            <% sports.forEach( function (sport) { %>
 
-                    <div class="video">
-                        <video class="thevideo" autoplay muted loop preload="none">
-                            <source src="public/images/Adele - Hello.mp4" type="video/mp4">
-                            <source src="public/images/Adele - Hello.webm" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
             <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="<%= gridImages[0].img %>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <a href="/sport/<%= sport._id %>">
+                    <div id="videosList">
 
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
+                        <div class="video">
+                            <video class="thevideo" autoplay muted loop preload="none">
+                                <source src="public/images/Adele - Hello.mp4" type="video/mp4">
+                                <source src="public/images/Adele - Hello.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card">
-                    <img src="http://www.eyebridge.in/blog/wp-content/uploads/2017/03/virat-on-pitch.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Virat Kohli</p>
-                    </div>
-                </div>
-            </div>
+            <% }); %>
         </div>
     </div>
     </div>

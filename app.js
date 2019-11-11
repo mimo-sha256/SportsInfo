@@ -3,33 +3,25 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/tryout", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/sportsInfo", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
 
 //Schema setup
+var Player = mongoose.model('Player', new mongoose.Schema({ name: String, bgimage: String, image: String, description: String, teams: Array }), 'players');
+var Team = mongoose.model('Team', new mongoose.Schema({ name: String, image: String, description: String, players: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Player' }] }), 'teams');
+var Sport = mongoose.model('Sport', new mongoose.Schema({ name: String, images: Array, description: String, teams: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Team' }] }), 'sports');
 
-var Images = mongoose.model('Image', new mongoose.Schema({ name: String, img: String }), 'images');
 
 app.get("/", function (req, res) {
-    var bgImage;
-    var gridImages;
-    Images.find({ name: "bg" }, function (err, images) {
+
+    Sport.find({}, function (err, sports) {
         if (err) {
             console.log(err);
         }
         else {
-            bgImage = images;
-        }
-    });
-    Images.find({ name: "grid" }, function (err, images) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            gridImages = images;
-            res.render("home", { bgImage: bgImage, gridImages: gridImages });
+            res.render("home", { sports: sports });
         }
     });
 });
@@ -42,16 +34,38 @@ app.get("/login", function (req, res) {
     res.render("login");
 });
 
-app.get("/sport/:sportName", function (req, res) {
-    res.render("sport");
+app.get("/sport/:sportid", function (req, res) {
+    Sport.findById(req.params.sportid).populate('teams').exec(function (err, sport) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            // console.log(sport);
+            res.render("sport", { sport: sport });
+        }
+    });
 });
 
-app.get("/team/:teamName", function (req, res) {
-    res.render("team");
+app.get("/team/:teamid", function (req, res) {
+    Team.findById(req.params.teamid).populate('players').exec(function (err, team) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render("team", { team: team });
+        }
+    });
 });
 
-app.get("/player/:playerName", function (req, res) {
-    res.render("player");
+app.get("/player/:playerid", function (req, res) {
+    Player.findById(req.params.playerid, function (err, player) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render("player", { player: player });
+        }
+    });
 });
 
 app.listen(3000, process.env.IP, function () {

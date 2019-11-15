@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
 
 //Schema setup
-var Player = mongoose.model('Player', new mongoose.Schema({ name: String, bgimage: String, image: String, description: String, teams: Array }), 'players');
+var Player = mongoose.model('Player', new mongoose.Schema({ name: String, bgimage: String, image: String, description: String }), 'players');
 var Team = mongoose.model('Team', new mongoose.Schema({ name: String, image: String, description: String, players: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Player' }] }), 'teams');
 var Sport = mongoose.model('Sport', new mongoose.Schema({ name: String, images: Array, description: String, teams: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Team' }] }), 'sports');
 
